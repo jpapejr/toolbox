@@ -1,0 +1,32 @@
+#!/bin/bash
+TOOLBOX_BIN=$TOOLBOX_HOME/bin
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	OS="mac"	
+elif [[ "$OSTYPE" == "linux-gnu" ]];then 
+	OS="linux"
+fi 
+
+case "$1" in
+"ls")
+    echo "Listing known tools/apps/scripts for $OS"
+    ls "$TOOLBOX_HOME/$OS" | grep -v 'IBM_Cloud_CLI' | awk '/.*-.*/ {print "* "$0}' | cut -d'-' -f1 | sort | uniq
+    ;;
+"lsv")
+   echo "Listing known versions of $2 for $OS"
+   ls "$TOOLBOX_HOME/$OS" | grep $2 | perl -n -e'/.*-(.*)/ && print "* $1\n"'
+   ;;
+"ln")
+   echo "Linking $2 to version $3 for $OS"
+   ln -s "$TOOLBOX_HOME/$OS/$2-$3" "$TOOLBOX_BIN/$2"
+   ;;
+"lnr")
+   echo "Removing link for $2"
+   rm -f "$TOOLBOX_BIN/$2"
+   ;;
+*)
+   echo "Valid commands are :"
+   echo '      ls  - list known tools'
+   echo '      lsv - list versions of the tool named in $1'
+   echo '      ln  - link the tool named in $1 to the version specified in $2'
+   echo '      lnr - remove the link for the tool named in $1'
+esac

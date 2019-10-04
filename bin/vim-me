@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Removing any existing ~/.vim directory"
+rm -fr ~/.vim
+echo "Linking up toolbox-provided vim directory to ~/.vim"
+ln -s $TOOLBOX_HOME/vim ~/.vim
+echo "Done"
