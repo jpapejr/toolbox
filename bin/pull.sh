@@ -163,7 +163,7 @@ if [ "$OS" == "linux" ]; then
         cd $TOOLBOX_HOME/$OS
         tar xfz octant_0.7.0_Linux-64bit.tar.gz octant_0.7.0_Linux-64bit/octant
         mv octant_0.7.0_Linux-64bit/octant octant-0.7.0
-        rm -fr octant_0.7.0_Linux-64bit/octant
+        rm -fr octant_0.7.0_Linux-64bit
         rm -f  octant_0.7.0_Linux-64bit.tar.gz
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
