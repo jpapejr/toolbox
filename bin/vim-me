@@ -4,9 +4,9 @@ rm -fr ~/.vim
 echo "Linking up toolbox-provided vim directory to ~/.vim"
 ln -s $TOOLBOX_HOME/vim ~/.vim
 cd ~/.vim
-git module init
+git submodule init
 echo "Installing vim-airline"
-git module add https://github.com/ctrlpvim/ctrlp.vim.git vim/pack/dist/start/vim-airline
+git submodule add https://github.com/ctrlpvim/ctrlp.vim.git vim/pack/dist/start/vim-airline
 echo "Installing ctrl-p"
-git module add https://github.com/ctrlpvim/ctrlp.vim.git vim/pack/dist/start/ctrlp
+git submodule add https://github.com/ctrlpvim/ctrlp.vim.git vim/pack/dist/start/ctrlp
 echo "Done"
