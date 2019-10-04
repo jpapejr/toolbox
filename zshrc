@@ -102,9 +102,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:$TOOLBOX_HOME/bin:$GOPATH/bin"
 
 OS=$($TOOLBOX_HOME/bin/whatos.sh)
 source <($TOOLBOX_HOME/bin/kubectl completion zsh)
-source "$TOOLBOX_HOME/$OS/IBM_Cloud_CLI-0.19.0/autocomplete/zsh_autocomplete"
 source <(helm completion zsh)
-source <(tkn completion zsh)
 
 
 alias tv='open -a TerminalVim.app'
