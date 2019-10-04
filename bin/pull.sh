@@ -204,7 +204,7 @@ if [ "$OS" == "linux" ]; then
         wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv IBM_Cloud_CLI IBM_Cloud_IBM-0.19.0
+        mv IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
         ln -s IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
         rm -f archive 
         cd - > /dev/null
@@ -213,7 +213,7 @@ elif [ "$OS" == "mac" ]; then
         wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv IBM_Cloud_CLI IBM_Cloud_IBM-0.19.0
+        mv IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
         ln -s IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
         rm -f archive 
         cd - > /dev/null
