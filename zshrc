@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export TOOLBOX_HOME="$HOME/Documents/toolbox"
+export TOOLBOX_HOME="$HOME/toolbox"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:$TOOLBOX_HOME/bin:$GOPATH/bin"
 export PYTHONPATH=$PYTHONPATH:/root/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc
 
@@ -113,8 +113,5 @@ alias runon='docker run -i ${TERMS} --rm -v $HOME:$HOME -v $HOME/.krew:/home/use
 
 
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
