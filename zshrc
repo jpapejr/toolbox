@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export TOOLBOX_HOME="$HOME/Documents/toolbox"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:$TOOLBOX_HOME/bin:$GOPATH/bin"
+export PYTHONPATH=$PYTHONPATH:/root/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc
 
 OS=$($TOOLBOX_HOME/bin/whatos.sh)
 source <($TOOLBOX_HOME/bin/kubectl completion zsh)
