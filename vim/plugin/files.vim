@@ -1,9 +1,9 @@
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-  if &omnifunc == "" |
-  	setlocal omnifunc=syntaxcomplete#Complete |
-  endif
-endif
+"if has("autocmd") && exists("+omnifunc")
+"  autocmd Filetype *
+"  if &omnifunc == "" |
+"  	setlocal omnifunc=syntaxcomplete#Complete |
+"  endif
+"endif
 
 
 autocmd FileType go setlocal shiftwidth=2 tabstop=2

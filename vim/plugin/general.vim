@@ -14,3 +14,6 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 colo challenger_deep
+
+"better clipboard
+set clipboard^=unnamed,unnamedplus
