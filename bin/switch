@@ -13,7 +13,7 @@ case "$1" in
     ;;
 "lsv")
    echo "Listing known versions of $2 for $OS"
-   ls "$TOOLBOX_HOME/$OS" | grep $2 | perl -n -e'/.*-(.*)/ && print "* $1\n"'
+   ls "$TOOLBOX_HOME/$OS" | grep $2 | perl -n -e'/.*-([0-9].[0-9].[0-9])/ && print "* $1\n"'
    ;;
 "ln")
    echo "Linking $2 to version $3 for $OS"

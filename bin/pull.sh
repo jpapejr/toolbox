@@ -14,7 +14,7 @@ if [ "$OS" == "linux" ]; then
         cd $TOOLBOX_HOME/$OS
         tar xfz appsody-0.4.6-linux-amd64.tar.gz appsody
         mv appsody appsody-0.4.6
-        rm -f appsody-0.4.6-darwin-amd64.tar.gz
+        rm -f appsody-0.4.6-linux-amd64.tar.gz
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
