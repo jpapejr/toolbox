@@ -5,10 +5,12 @@ echo TOOLBOX_HOME=$TOOLBOX_HOME
 echo OS=$OS
 
 # Appsody
-TOOL=Appsody
+TOOL=Appsody_and_Controller
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
         wget -q https://github.com/appsody/appsody/releases/download/0.4.6/appsody-0.4.6-linux-amd64.tar.gz -O $TOOLBOX_HOME/$OS/appsody-0.4.6-linux-amd64.tar.gz
+        wget -q https://github.com/appsody/controller/releases/download/0.2.4/appsody-controller -O $TOOLBOX_HOME/bin/appsody-controller
+        chmod +x $TOOLBOX_HOME/bin/appsody-controller
         cd $TOOLBOX_HOME/$OS
         tar xfz appsody-0.4.6-linux-amd64.tar.gz appsody
         mv appsody appsody-0.4.6
@@ -17,6 +19,8 @@ if [ "$OS" == "linux" ]; then
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
         wget -q https://github.com/appsody/appsody/releases/download/0.4.6/appsody-0.4.6-darwin-amd64.tar.gz -O $TOOLBOX_HOME/$OS/appsody-0.4.6-darwin-amd64.tar.gz
+        wget -q https://github.com/appsody/controller/releases/download/0.2.4/appsody-controller -O $TOOLBOX_HOME/bin/appsody-controller
+        chmod +x $TOOLBOX_HOME/bin/appsody-controller
         cd $TOOLBOX_HOME/$OS
         tar xfz appsody-0.4.6-darwin-amd64.tar.gz appsody
         mv appsody appsody-0.4.6
@@ -204,8 +208,8 @@ if [ "$OS" == "linux" ]; then
         wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
-        ln -s IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
+        ln -sf IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
         rm -f archive 
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
@@ -213,8 +217,8 @@ elif [ "$OS" == "mac" ]; then
         wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
-        ln -s IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
+        ln -sf IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
         rm -f archive 
         cd - > /dev/null
 fi
@@ -224,17 +228,17 @@ TOOL=istioctl
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
         cd $TOOLBOX_HOME/$OS
-        curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
-        mv istio-1.3.2 istio_1.3.2
-        ln -s istio_1.3.2/bin/istioctl ./istioctl-1.3.2
+        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
+        mv -f istio-1.3.2 istio_1.3.2
+        ln -sf istio_1.3.2/bin/istioctl ./istioctl-1.3.2
         rm -fr /usr/local/bin/istioctl
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
         cd $TOOLBOX_HOME/$OS
-        curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
-        mv istio-1.3.2 istio_1.3.2
-        ln -s istio_1.3.2/bin/istioctl ./istioctl-1.3.2
+        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
+        mv -f istio-1.3.2 istio_1.3.2
+        ln -sf istio_1.3.2/bin/istioctl ./istioctl-1.3.2
         rm -fr /usr/local/bin/istioctl
         cd - > /dev/null
 fi
