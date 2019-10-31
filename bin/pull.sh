@@ -243,5 +243,19 @@ elif [ "$OS" == "mac" ]; then
         cd - > /dev/null
 fi
 
+## Special cases follow
+## these typically use predefined install methods like brew/apt to get software loaded on the host
+
+TOOL=eternal_terminal
+if [ "$OS" == "linux" ]; then
+        echo "Fetching $TOOL for $OS"
+        apt install -y software-properties-common
+        add-apt-repository ppa:jgmath2000/et
+        apt update
+        apt install -y et
+elif [ "$OS" == "mac" ]; then
+        echo "Fetching $TOOL for $OS"
+        brew install MisterTea/et/et
+fi
 
 chmod +x $TOOLBOX_HOME/$OS/*
