@@ -228,17 +228,17 @@ TOOL=istioctl
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
         cd $TOOLBOX_HOME/$OS
-        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
-        mv -f istio-1.3.2 istio_1.3.2
-        ln -sf istio_1.3.2/bin/istioctl ./istioctl-1.3.2
+        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.4 sh -
+        mv -f istio-1.3.4 istio_1.3.4
+        ln -sf istio_1.3.4/bin/istioctl ./istioctl-1.3.4
         rm -fr /usr/local/bin/istioctl
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
         cd $TOOLBOX_HOME/$OS
-        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.2 sh -
-        mv -f istio-1.3.2 istio_1.3.2
-        ln -sf istio_1.3.2/bin/istioctl ./istioctl-1.3.2
+        curl -sL https://git.io/getLatestIstio | ISTIO_VERSION=1.3.4 sh -
+        mv -f istio-1.3.4 istio_1.3.4
+        ln -sf istio_1.3.4/bin/istioctl ./istioctl-1.3.4
         rm -fr /usr/local/bin/istioctl
         cd - > /dev/null
 fi
