@@ -205,20 +205,20 @@ fi
 TOOL=IBM_CLOUD_CLI
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
+        wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.20.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
-        ln -sf IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.20.0
+        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.20.0
         rm -f archive 
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.19.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
+        wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.20.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.19.0
-        ln -sf IBM_Cloud_CLI-0.19.0/ibmcloud ./ibmcloud-0.19.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.20.0
+        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.20.0
         rm -f archive 
         cd - > /dev/null
 fi
