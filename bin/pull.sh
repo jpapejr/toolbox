@@ -258,4 +258,10 @@ elif [ "$OS" == "mac" ]; then
         brew install MisterTea/et/et
 fi
 
+TOOL=kontena.io_lens
+if [ "$OS" == "mac" ]; then
+        echo "Fetching $TOOL for $OS"
+        curl https://kontena-lens-desktop.s3-eu-west-1.amazonaws.com/Lens-2.5.1.dmg -o ~/Downloads/Lens-2.5.1.dmg
+        open ~/Downloads/Lens-2.5.1.dmg 
+fi
 chmod +x $TOOLBOX_HOME/$OS/*
