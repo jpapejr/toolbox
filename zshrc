@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 export TOOLBOX_HOME="$HOME/toolbox"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:$TOOLBOX_HOME/bin:$GOPATH/bin"
 export PYTHONPATH=$PYTHONPATH:/root/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/etc
-
+export IKS_BETA_VERSION=1
 OS=$($TOOLBOX_HOME/bin/whatos.sh)
 source <($TOOLBOX_HOME/bin/kubectl completion zsh)
 source <(helm completion zsh)
