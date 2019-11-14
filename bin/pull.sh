@@ -264,4 +264,13 @@ if [ "$OS" == "mac" ]; then
         curl https://kontena-lens-desktop.s3-eu-west-1.amazonaws.com/Lens-2.5.1.dmg -o ~/Downloads/Lens-2.5.1.dmg
         open ~/Downloads/Lens-2.5.1.dmg 
 fi
+
+TOOL=ibm_kui
+if [ "$OS" == "mac" ]; then
+        echo "Fetching $TOOL for $OS"
+        curl -L https://macos-tarball.kui-shell.org/ | tar jxf -
+        mv Kui-darwin-x64/Kui.app /Applications/Kui.app
+        rm -fr Kui-darwin-x64
+fi
+
 chmod +x $TOOLBOX_HOME/$OS/*
