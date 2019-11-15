@@ -75,25 +75,21 @@ fi
 TOOL=Helm
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://get.helm.sh/helm-v2.14.3-linux-amd64.tar.gz -O $TOOLBOX_HOME/$OS/helm-v2.14.3-linux-amd64.tar.gz
+        wget -q https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz -O $TOOLBOX_HOME/$OS/helm-v3.0.0-linux-amd64.tar.gz
         cd $TOOLBOX_HOME/$OS
-        tar xfz helm-v2.14.3-linux-amd64.tar.gz linux-amd64/helm 
-        tar xfz helm-v2.14.3-linux-amd64.tar.gz linux-amd64/tiller 
-        mv linux-amd64/helm helm-2.14.3
-        mv linux-amd64/tiller tiller-2.14.3
+        tar xfz helm-v3.0.0-linux-amd64.tar.gz linux-amd64/helm
+        mv linux-amd64/helm helm-3.0.0
         rm -fr linux-amd64
-        rm -f helm-v2.14.3-linux-amd64.tar.gz
+        rm -f helm-v3.0.0-linux-amd64.tar.gz
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://get.helm.sh/helm-v2.14.3-darwin-amd64.tar.gz -O $TOOLBOX_HOME/$OS/helm-v2.14.3-darwin-amd64.tar.gz
+        wget -q https://get.helm.sh/helm-v3.0.0-darwin-amd64.tar.gz -O $TOOLBOX_HOME/$OS/helm-v3.0.0-darwin-amd64.tar.gz
         cd $TOOLBOX_HOME/$OS    
-        tar xfz helm-v2.14.3-darwin-amd64.tar.gz darwin-amd64/helm
-        tar xfz helm-v2.14.3-darwin-amd64.tar.gz darwin-amd64/tiller
-        mv darwin-amd64/helm helm-2.14.3
-        mv darwin-amd64/tiller tiller-2.14.3
+        tar xfz helm-v3.0.0-darwin-amd64.tar.gz darwin-amd64/helm
+        mv darwin-amd64/helm helm-3.0.0
         rm -fr darwin-amd64
-        rm -f helm-v2.14.3-darwin-amd64.tar.gz
+        rm -f helm-v3.0.0-darwin-amd64.tar.gz
         cd - > /dev/null
 fi
 
