@@ -159,21 +159,21 @@ fi
 TOOL=Octant
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://github.com/vmware-tanzu/octant/releases/download/v0.7.0/octant_0.7.0_Linux-64bit.tar.gz -O $TOOLBOX_HOME/$OS/octant_0.7.0_Linux-64bit.tar.gz 
+        wget -q https://github.com/vmware-tanzu/octant/releases/download/v0.9.1/octant_0.9.1_Linux-64bit.tar.gz -O $TOOLBOX_HOME/$OS/octant_0.9.1_Linux-64bit.tar.gz 
         cd $TOOLBOX_HOME/$OS
-        tar xfz octant_0.7.0_Linux-64bit.tar.gz octant_0.7.0_Linux-64bit/octant
-        mv octant_0.7.0_Linux-64bit/octant octant-0.7.0
-        rm -fr octant_0.7.0_Linux-64bit
-        rm -f  octant_0.7.0_Linux-64bit.tar.gz
+        tar xfz octant_0.9.1_Linux-64bit.tar.gz octant_0.9.1_Linux-64bit/octant
+        mv octant_0.9.1_Linux-64bit/octant octant-0.9.1
+        rm -fr octant_0.9.1_Linux-64bit
+        rm -f  octant_0.9.1_Linux-64bit.tar.gz
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://github.com/vmware-tanzu/octant/releases/download/v0.7.0/octant_0.7.0_macOS-64bit.tar.gz -O $TOOLBOX_HOME/$OS/octant_0.7.0_macOS-64bit.tar.gz
+        wget -q https://github.com/vmware-tanzu/octant/releases/download/v0.9.1/octant_0.9.1_macOS-64bit.tar.gz -O $TOOLBOX_HOME/$OS/octant_0.9.1_macOS-64bit.tar.gz
         cd $TOOLBOX_HOME/$OS    
-        tar xfz octant_0.7.0_macOS-64bit.tar.gz octant_0.7.0_macOS-64bit/octant
-        mv octant_0.7.0_macOS-64bit/octant octant-0.7.0
-        rm -fr octant_0.7.0_macOS-64bit
-        rm -f  octant_0.7.0_macOS-64bit.tar.gz
+        tar xfz octant_0.9.1_macOS-64bit.tar.gz octant_0.9.1_macOS-64bit/octant
+        mv octant_0.9.1_macOS-64bit/octant octant-0.9.1
+        rm -fr octant_0.9.1_macOS-64bit
+        rm -f  octant_0.9.1_macOS-64bit.tar.gz
         cd - > /dev/null
 fi
 
