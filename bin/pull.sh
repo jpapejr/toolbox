@@ -138,18 +138,18 @@ fi
 TOOL=oc_3_11
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q  oc.tar.gz -O $TOOLBOX_HOME/$OS/oc.tar.gz
+        wget -q  https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/linux/oc.tar.gz -O $TOOLBOX_HOME/$OS/oc.tar.gz
         cd $TOOLBOX_HOME/$OS
         tar xfz $TOOLBOX_HOME/$OS/oc.tar.gz
-        mv oc oc-3.11.157
+        mv oc oc-4.4
         rm -fr $TOOLBOX_HOME/$OS/oc.tar.gz
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q  https://mirror.openshift.com/pub/openshift-v3/clients/3.11.157/macosx/oc.tar.gz -O $TOOLBOX_HOME/$OS/oc.tar.gz
+        wget -q  https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/macosx/oc.tar.gz -O $TOOLBOX_HOME/$OS/oc.tar.gz
         cd $TOOLBOX_HOME/$OS    
         tar xvfz $TOOLBOX_HOME/$OS/oc.tar.gz
-        mv oc oc-3.11.157
+        mv oc oc-4.4
         rm -fr $TOOLBOX_HOME/$OS/oc.tar.gz
         cd - > /dev/null
 fi
