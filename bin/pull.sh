@@ -134,8 +134,18 @@ elif [ "$OS" == "mac" ]; then
         wget -q https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/darwin/amd64/kubectl -O $TOOLBOX_HOME/$OS/kubectl-1.15.0
 fi
 
+# kubectl 
+TOOL=kubectl_1_15
+if [ "$OS" == "linux" ]; then
+        echo "Fetching $TOOL for $OS"
+        wget -q https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl -O $TOOLBOX_HOME/$OS/kubectl-1.16.0
+elif [ "$OS" == "mac" ]; then
+        echo "Fetching $TOOL for $OS"
+        wget -q https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/darwin/amd64/kubectl -O $TOOLBOX_HOME/$OS/kubectl-1.16.0
+fi
+
 # oc 
-TOOL=oc_3_11
+TOOL=oc_4_4
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
         wget -q  https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.4/linux/oc.tar.gz -O $TOOLBOX_HOME/$OS/oc.tar.gz
@@ -200,20 +210,20 @@ fi
 TOOL=IBM_CLOUD_CLI
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.20.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
+        wget -q  https://clis.cloud.ibm.com/download/bluemix-cli/0.21.0/linux64/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.20.0
-        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.20.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.21.0
+        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.21.0
         rm -f archive 
         cd - > /dev/null
 elif [ "$OS" == "mac" ]; then
         echo "Fetching $TOOL for $OS"
-        wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.20.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
+        wget -q https://clis.cloud.ibm.com/download/bluemix-cli/0.21.0/osx/archive -O $TOOLBOX_HOME/$OS/archive
         cd $TOOLBOX_HOME/$OS
         tar xfz archive 
-        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.20.0
-        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.20.0
+        mv -f IBM_Cloud_CLI IBM_Cloud_CLI-0.21.0
+        ln -sf IBM_Cloud_CLI-0.20.0/ibmcloud ./ibmcloud-0.21.0
         rm -f archive 
         cd - > /dev/null
 fi
