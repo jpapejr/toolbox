@@ -135,7 +135,7 @@ elif [ "$OS" == "mac" ]; then
 fi
 
 # kubectl 
-TOOL=kubectl_1_15
+TOOL=kubectl_1_16
 if [ "$OS" == "linux" ]; then
         echo "Fetching $TOOL for $OS"
         wget -q https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl -O $TOOLBOX_HOME/$OS/kubectl-1.16.0
