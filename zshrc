@@ -104,7 +104,7 @@ export IKS_BETA_VERSION=1
 OS=$($TOOLBOX_HOME/bin/whatos.sh)
 source <($TOOLBOX_HOME/bin/kubectl completion zsh)
 source <(helm completion zsh)
-
+eval $(minikube docker-env)
 
 alias tv='open -a TerminalVim.app'
 alias get-iks-configs='curl -s https://raw.githubusercontent.com/jpapejr/docker/master/ibmcloud/get-iks-configs.sh | bash'
