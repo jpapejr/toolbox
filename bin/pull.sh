@@ -228,6 +228,18 @@ elif [ "$OS" == "mac" ]; then
         cd - > /dev/null
 fi
 
+TOOL=docker_client
+if [ "$OS" == "mac" ]; then
+        echo "Fetching $TOOL for $OS"
+        wget -q https://download.docker.com/mac/static/stable/x86_64/docker-19.03.5.tgz -O $TOOLBOX_HOME/$OS/docker-19.03.5.tgz
+        cd $TOOLBOX_HOME/$OS
+        tar xvfz docker-19.03.5.tgz
+        cp docker/docker ./docker-19.03.5
+        rm -fr docker
+        rm -f $TOOLBOX_HOME/$OS/docker-19.03.5.tgz
+        cd - > /dev/null
+fi
+
 # Istioctl
 TOOL=istioctl
 if [ "$OS" == "linux" ]; then
@@ -251,31 +263,31 @@ fi
 ## Special cases follow
 ## these typically use predefined install methods like brew/apt to get software loaded on the host
 
-TOOL=eternal_terminal
-if [ "$OS" == "linux" ]; then
-        echo "Fetching $TOOL for $OS"
-        apt install -y software-properties-common
-        add-apt-repository ppa:jgmath2000/et
-        apt update
-        apt install -y et
-elif [ "$OS" == "mac" ]; then
-        echo "Fetching $TOOL for $OS"
-        brew install MisterTea/et/et
-fi
+# TOOL=eternal_terminal
+# if [ "$OS" == "linux" ]; then
+#         echo "Fetching $TOOL for $OS"
+#         apt install -y software-properties-common
+#         add-apt-repository ppa:jgmath2000/et
+#         apt update
+#         apt install -y et
+# elif [ "$OS" == "mac" ]; then
+#         echo "Fetching $TOOL for $OS"
+#         brew install MisterTea/et/et
+# fi
 
-TOOL=kontena.io_lens
-if [ "$OS" == "mac" ]; then
-        echo "Fetching $TOOL for $OS"
-        curl https://kontena-lens-desktop.s3-eu-west-1.amazonaws.com/Lens-2.5.1.dmg -o ~/Downloads/Lens-2.5.1.dmg
-        open ~/Downloads/Lens-2.5.1.dmg 
-fi
+# TOOL=kontena.io_lens
+# if [ "$OS" == "mac" ]; then
+#         echo "Fetching $TOOL for $OS"
+#         curl https://kontena-lens-desktop.s3-eu-west-1.amazonaws.com/Lens-2.5.1.dmg -o ~/Downloads/Lens-2.5.1.dmg
+#         open ~/Downloads/Lens-2.5.1.dmg 
+# fi
 
-TOOL=ibm_kui
-if [ "$OS" == "mac" ]; then
-        echo "Fetching $TOOL for $OS"
-        curl -L https://macos-tarball.kui-shell.org/ | tar jxf -
-        mv Kui-darwin-x64/Kui.app /Applications/Kui.app
-        rm -fr Kui-darwin-x64
-fi
+# TOOL=ibm_kui
+# if [ "$OS" == "mac" ]; then
+#         echo "Fetching $TOOL for $OS"
+#         curl -L https://macos-tarball.kui-shell.org/ | tar jxf -
+#         mv Kui-darwin-x64/Kui.app /Applications/Kui.app
+#         rm -fr Kui-darwin-x64
+# fi
 
 chmod +x $TOOLBOX_HOME/$OS/*
